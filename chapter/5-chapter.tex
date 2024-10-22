@@ -1,0 +1,53 @@
+\chapter{Konzeption}
+In diesem Kapitel wird der konzeptionelle Entwurf der entwickelten Lösung detailliert beschrieben. Die Konzeption umfasst alle wesentlichen Aspekte der Systemarchitektur, der Prozessabläufe sowie der Benutzeroberflächen. Dabei war es entscheidend, sowohl die technischen Anforderungen als auch die Nutzerbedürfnisse optimal zu berücksichtigen.
+\newline
+Zunächst wird der Workflow des Anfrageprozesses dargestellt, um die Abfolge und Logik der einzelnen Prozessschritte zu veranschaulichen. Dies bildet die Grundlage für die spätere Implementierung der Abläufe und dient dazu, alle Beteiligten über die genauen Prozessschritte zu informieren.
+\newline
+Daraufhin folgt das UML-Diagramm, das die Backend-Struktur des Systems beschreibt. Das Diagramm verdeutlicht die technischen Komponenten sowie deren Beziehungen zueinander.
+\newline
+Schließlich werden die Mockups vorgestellt, die die geplanten Benutzeroberflächen visualisieren. Diese grafischen Entwürfe dienen als Grundlage für die spätere Implementierung der Benutzeroberfläche und helfen dabei, die Nutzerinteraktionen und das Design bereits in der frühen Phase des Projekts zu planen.
+\newline
+Die einzelnen Konzepte in den folgenden Unterkapiteln bieten somit einen umfassenden Überblick über die geplante Systemarchitektur, den Prozessablauf und die Benutzerführung.
+\newpage
+\section{Workflow}
+Der dargestellte Workflow (s. Abbildung \ref{fig:Workflow}) beschreibt den vollständigen Ablauf eines Anfrageprozesses, der mehrere Phasen durchläuft, um eine effiziente und strukturierte Bearbeitung sicherzustellen. Dieser Prozess beginnt mit der Erstellung einer Anfrage und endet mit der finalen Analyse und Bewertung durch den Anfragenden.
+\subsection*{Entwurfsphase (Draft)}
+Der Prozess beginnt mit der Erstellung der Anfrage. In dieser Phase bereitet der Antragsteller alle relevanten Informationen vor, die für die Anfrage notwendig sind. Die Anfrage wird jedoch noch nicht an die zuständigen Personen gesendet, sondern verbleibt als Entwurf. Hier kann der Antragsteller die Anfrage noch überarbeiten, Details hinzufügen oder Anpassungen vornehmen. Der Entwurfsstatus ermöglicht es, die Anfrage zu optimieren, bevor sie offiziell eingereicht wird. Sobald der Antragsteller alle notwendigen Informationen eingetragen hat und bereit ist, die Anfrage weiterzuleiten, wird diese in den nächsten Schritt überführt.
+\subsection*{Offene Phase (Open)}
+Nachdem die Anfrage finalisiert wurde, wird sie aus dem Entwurfsstatus herausgesendet. In der Phase \grqq open\grqq{}  können nun die zuständigen Mitarbeiter die Anfrage einsehen.
+\newline
+Der nächste Schritt im Prozess ist die Entscheidung, ob die Anfrage akzeptiert wird. Wenn die Anfrage nicht akzeptiert wird, endet der Prozess an dieser Stelle und die Anfrage wird entweder abgelehnt oder zurückgezogen. In solchen Fällen wird keine weitere Bearbeitung vorgenommen, und der Anfragende wird informiert.
+\newline
+Wird die Anfrage hingegen akzeptiert, erfolgt die Zuweisung einer verantwortlichen Person, die die Bearbeitung übernimmt. Dieser Schritt ist entscheidend, da die Verantwortung für den weiteren Verlauf der Anfrage klar festgelegt wird.
+\subsection*{In Bearbeitung (In Progress)}
+In dieser Phase wird die Anfrage aktiv bearbeitet. Die verantwortliche Person prüft zunächst die Anfrage und den damit verbundenen Arbeitsaufwand. Ein wichtiger Entscheidungspunkt in diesem Abschnitt ist, ob es noch offene Fragen gibt, die mit dem Antragsteller geklärt werden müssen. Falls Fragen bestehen, wird der Antragsteller kontaktiert, um Unklarheiten zu beseitigen und gegebenenfalls zusätzliche Informationen anzufordern.
+\newline
+Sobald alle notwendigen Informationen vorliegen und alle Fragen geklärt sind, beginnt die Erstellung der Analyse. Diese Analyse kann je nach Anfrageumfang und -komplexität unterschiedlich viel Zeit in Anspruch nehmen. Die Analyse ist der Kern des Bearbeitungsprozesses, da hier die eigentliche Auswertung der angeforderten Daten oder Informationen stattfindet.
+\newline
+Während der Analysephase ist es weiterhin möglich, dass der Antragsteller oder die verantwortliche Person Rückfragen haben oder zusätzliche Details geklärt werden müssen. Es kann notwendig sein, dass eine enge Zusammenarbeit zwischen dem Analysten und dem Antragsteller erforderlich ist, um sicherzustellen, dass die Analyse den Erwartungen entspricht.
+\newline
+Parallel zur Analyse wird auch eine Einigung zwischen dem Analysten und dem Antragsteller getroffen. Hierbei wird geprüft, ob beide Seiten mit dem Fortschritt und den Bedingungen der Anfrage zufrieden sind. Sollte keine Einigung erzielt werden, wird der Prozess in die abgelehnte Phase überführt.
+\subsection*{Abgelehnt/Zur{\"u}ckgezogen (Rejected/Revoked)}
+Falls die Einigung zwischen dem Antragsteller und dem Analysten nicht erreicht wird, oder wenn während des Prozesses festgestellt wird, dass die Anfrage nicht weiter verfolgt werden kann, wird die Anfrage in den Status \grqq Rejected\grqq{} oder \grqq Revoked\grqq{} versetzt. Dieser Status beendet den Anfrageprozess vorzeitig. Gründe für diesen Abbruch könnten unklare Anforderungen, nicht erfüllbare Bedingungen oder andere Hindernisse sein, die den Abschluss der Anfrage verhindern.
+\subsection*{Abschlussphase (Done)}
+Ist die Analyse abgeschlossen und alle offenen Punkte geklärt, wird die Analyse an den Antragsteller gesendet. Der Antragsteller hat nun die Möglichkeit, die fertige Analyse zu überprüfen und zu bewerten, ob die Ergebnisse seinen Erwartungen entsprechen. Diese Phase ermöglicht es dem Antragsteller, die übermittelten Informationen detailliert zu prüfen und sicherzustellen, dass alle Anforderungen erfüllt sind.
+\newline
+Falls der Antragsteller nach der Überprüfung zufrieden ist, wird der Prozess abgeschlossen und der Status der Anfrage auf \grqq Done\grqq{} gesetzt. Sollte der Antragsteller noch weitere Fragen oder Anliegen haben, besteht die Möglichkeit, den Analysten zu kontaktieren, um diese Punkte zu klären. Der Prozess wird erst dann als abgeschlossen betrachtet, wenn der Antragsteller vollständig zufrieden ist und alle Anliegen gelöst wurden.
+\newline
+In dieser finalen Phase spielt die Kommunikation zwischen dem Analysten und dem Antragsteller eine wichtige Rolle, um sicherzustellen, dass alle Erwartungen erfüllt wurden und der Prozess erfolgreich abgeschlossen werden kann.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.4]{media/Workflow}
+    \caption{Workflow}
+    \label{fig:Workflow}
+\end{figure}
+\newpage
+\section{UML-Diagramm}
+Das UML-Diagramm zeigt die zentrale Struktur des IAV Merida Request-Tools, indem es die Klassen und deren Beziehungen des Backends modelliert. Die \grqq Request\grqq{}-Klasse bildet den Mittelpunkt des Systems und repräsentiert eine einzelne Anfrage. Jede Anfrage verfügt über Attribute wie zum Beispiel eine eindeutige ID, einen Title und das Erstellungsdatum, welche die grundlegenden Informationen der Anfrage speichern.
+\newline
+Zum einen gibt es die Enumerations \grqq State\grqq{}, \grqq Output\grqq{} und \grqq Report\grqq{}, mit der die \grqq Request\grqq{}-Klasse verknüpft ist. Dabei beschreibt das \grqq State\grqq{}-Enumeration den aktuellen Status der Anfrage. Somit wird der Fortschritt der jeweiligen Anfrage nachvollziehbar gemacht. Das \grqq Output\grqq{}-Enumeration beschreibt, welches Format von dem Anfragesteller erwünscht ist. Die Ausgabe ist als \grqq REPORT\grqq{}, \grqq TRACES\grqq{} oder \grqq CONVERSION\grqq{} möglich. Zusätzlich gibt es noch ein \grqq Report\grqq{}-Enumeration, da dieser Bericht in weitere Ausgabemöglichkeiten unterteilt werden kann. Desweiteren ist zu erwähnen, dass jede Anfrage nur einen Status haben kann und auch nur einem spezifischen Berichtstyp zugeordnet werden kann. 
+\newline
+Eine weitere Komponente ist die \grqq Vehicle\grqq{}-Klasse. Eine Anfrage kann mehrere Fahrzeuge enthalten und jedes Fahrzeug kann einem Request zugeordnet werden. Die gleiche Beziehung zu der \grqq Request\grqq{}-Klasse hat die \grqq Fleet\grqq{}-Klasse. Zudem stehen die Flotten und Fahrzeuge in einer Beziehung zueinander, damit mit je nachdem welche Flotte ausgewählt wird, die passenden Fahrzeuge angezeigt werden.
+\newline
+Darüber hinaus gibt es noch die \grqq BasicData\grqq{}-Klasse, hier werden alle grundlegenden Informationen, wie der Titel oder das Ziel der Anfrage dargestellt. Die \grqq TimePeriod\grqq{}-Klasse beschreibt die Zeitspanne, einer bestimmten Messung oder Analyse,
+\label{chap:kapitel5}

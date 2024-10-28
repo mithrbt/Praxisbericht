@@ -43,7 +43,7 @@ In dieser finalen Phase spielt die Kommunikation zwischen dem Analysten und dem 
 \end{figure}
 \newpage
 \section{UML-Diagramm}
-Das UML-Diagramm (s. Abbildung \ref{fig:UML_Diagramm})veranschaulicht die zentrale Struktur des IAV Merida Request-Tools und modelliert die Klassen sowie deren Beziehungen im Backend. Im Zentrum steht die Klasse \texttt{Request}, die eine einzelne Anfrage repräsentiert. Diese Klasse enthält Attribute wie eine eindeutige ID, einen Titel sowie das Erstellungsdatum und enthält somit die grundlegenden Informationen der jeweiligen Anfrage.
+Das UML-Diagramm (s. Abbildung \ref{fig:UML_Diagramm}) veranschaulicht die zentrale Struktur des IAV Merida Request-Tools und modelliert die Klassen sowie deren Beziehungen im Backend. Im Zentrum steht die Klasse \texttt{Request}, die eine einzelne Anfrage repräsentiert. Diese Klasse enthält Attribute wie eine eindeutige ID, einen Titel sowie das Erstellungsdatum und enthält somit die grundlegenden Informationen der jeweiligen Anfrage.
 \newline
 Die Klasse \texttt{Request} ist zudem mit mehreren Enumerationen verknüpft: \texttt{State}, \texttt{Output} und \texttt{Report}. Die Enumeration \texttt{State} beschreibt den aktuellen Status der Anfrage und ermöglicht es, den Fortschritt der Anfrage nachzuvollziehen. So können Anfragen beispielsweise als \texttt{NEW}, \texttt{IN\_PROGRESS} oder \texttt{COMPLETED} markiert werden. Das Enumeration \texttt{Output} beschreibt das gewünschte Ausgabeformat der Anfrage, welches in Form von \texttt{REPORT}, \texttt{TRACES} oder \texttt{CONVERSION} erfolgen kann. Zusätzlich unterteilt die Enumeration \texttt{Report} den Bericht in verschiedene Typen, beispielsweise \texttt{STATIC\_REPORT}, \texttt{DYNAMIC\_REPORT} oder \texttt{FILE\_EXPORT}. Dabei ist zu beachten, dass jede Anfrage genau einen Status und einen spezifischen Berichtstyp haben kann.
 \newline
@@ -58,4 +58,35 @@ Zusammengefasst visualisiert das UML-Diagramm die Kernkomponenten des IAV Merida
     \caption{UML-Diagramm}
     \label{fig:UML_Diagramm}
 \end{figure}
+\newpage
+\section{Mockups}
+Im Verlauf der Entwicklung des IAV Merida Request wurden mehrere Iterationen von Mockups erstellt, die schrittweise den Anforderungen und dem gewünschten User Interface angepasst wurden. Hier ist ein Überblick über die unterschiedlichen Versionen:
+\subsection*{MockUp 1}
+In der ersten Version der Mockups, s. Abbildung \ref{fig:MockUps1.0}, orientierten sich die Designentscheidungen stark am BMW Request Channel. Die Struktur und die Benutzeroberfläche in dieser Phase waren relativ einfach gehalten, mit einem klaren Fokus auf die wesentlichen Eingabefelder und -optionen, die für das Anfordern von Daten und Analysen benötigt wurden.
+\newline
+Wichtige Merkmale dieser Version:
+\begin{itemize}
+    \item Eine klare und strukturierte Eingabe für persönliche Details, Datenanforderungen und den gewünschten Ausgabetyp (z.B. „Raw Data“ oder „Analysis“).
+    \item Es wurde darauf geachtet, dass die Navigation zwischen den Schritten unkompliziert und intuitiv ist, allerdings war das Design noch stark an ein bekanntes Layout wie das von BMW angelehnt.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.2]{media/MockUps1.0}
+    \caption{MockUps1.0}
+    \label{fig:MockUps1.0}
+\end{figure}
+\subsection*{MockUp 2}
+In der zweiten Iteration, MockUps 2.0, wurden die ersten Anpassungen vorgenommen, die sich vom BMW Request Channel wegbewegten. Ziel war es, ein einzigartigeres Interface zu gestalten, das besser auf die spezifischen Anforderungen des Projekts und der Zielbenutzer zugeschnitten ist.
+Änderungen und Verbesserungen:
+Die Benutzeroberfläche wurde weiter verfeinert, insbesondere in Bezug auf die Platzierung und Gestaltung der Eingabefelder. Der Fokus lag auf einer besseren Lesbarkeit und einer verbesserten Nutzerführung.
+Das Layout wurde optimiert, um die Benutzerfreundlichkeit zu erhöhen, und es wurden kleinere Anpassungen vorgenommen, um den Anforderungen der Anwender besser gerecht zu werden.
+Die Struktur der Eingabeformulare wurde klarer gegliedert, und es wurden zusätzliche Informationen und Hilfetexte hinzugefügt, um den Benutzer durch den Prozess zu führen.
+\subsection*{MockUp 3 (Aktueller Stand)}
+MockUps 3.0 repräsentiert den aktuellen Stand der Entwicklung und zeigt eine weiterentwickelte und verfeinerte Benutzeroberfläche. Hier liegt der Schwerpunkt darauf, ein ausgereiftes und benutzerfreundliches System anzubieten, das sowohl funktional als auch optisch ansprechend ist.
+Wichtige Änderungen in dieser Version:
+Das Interface wirkt nun deutlich moderner und aufgeräumter. Es gibt eine klare Hierarchie in der Darstellung der Informationen, und die wichtigsten Optionen (wie die Auswahl des gewünschten Ausgabetyps) sind hervorgehoben.
+Es wurden weitere Schritte hinzugefügt, um den Benutzer durch den Prozess der Datenauswahl und Anforderung zu führen. Dazu gehören zusätzliche Kategorien für detailliertere Analysen und eine präzisere Auswahl an Flotten und Fahrzeugen.
+Der Workflow ist flexibler gestaltet, sodass Benutzer Anfragen als Entwurf speichern und später bearbeiten können, was die Effizienz und Benutzerfreundlichkeit weiter erhöht.
+\newline
+Zusammenfassend lässt sich sagen, dass sich das IAV Merida Request Tool durch einen iterativen Entwicklungsprozess erheblich weiterentwickelt hat. Während MockUps 1.0 noch stark an bestehende Lösungen angelehnt war, strebte MockUps 2.0 bereits ein eigenständiges Design mit klareren Nutzerführungen an. Mit MockUps 3.0 erreicht das Tool nun ein hohes Maß an Benutzerfreundlichkeit, Flexibilität und Funktionalität, das den Anforderungen der Benutzer in vollem Umfang gerecht wird.
 \label{chap:kapitel5}

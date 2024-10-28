@@ -1,2 +1,13 @@
 \chapter{Einzelne Aspekte der Implementierung}
+In diesem Kapitel werden die Hauptfunktionen und Module des Backends erläutert, (die ich während des Projekts entwickelt habe). Dabei werden die zugrunde liegende Architektur, der Datenfluss und die Interaktion der einzelnen Komponenten detailliert beschrieben. Auch Herausforderungen, die im Verlauf der Implementierung aufgetreten sind, werden thematisiert, um die Lösungsansätze und Entscheidungsprozesse nachvollziehbar darzustellen.
+\newline
+Für das Projekt wurde eine service-orientierte Model-View-Controller (MVC)-Architektur verwendet, die eine klare Trennung der Verantwortlichkeiten und eine hohe Modularität ermöglicht. Diese Architektur unterstützt die Erweiterbarkeit der Codebasis, was besonders vorteilhaft ist, da die genauen Anforderungen im Verlauf des Projekts mehrfach angepasst wurden.
+\newline
+\subsection*{Aufbau und Funktionen der einzelnen Komponenten}
+\begin{itemize}
+\item 1. Controller
+\begin{itemize}
+    \item Jeder Entität ist ein eigener Controller zugeordnet, der die Anfragen (Requests) des Clients verarbeitet und die Schnittstelle zur Außenwelt darstellt.
+    \end{itemize}
+\end{itemize}
 \label{chap:kapitel6}

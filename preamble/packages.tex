@@ -40,3 +40,16 @@
 \usepackage{todonotes}
 \usepackage{tabulary}
 \usepackage{IEEEtrantools}
+
+\usepackage{listings}
+\usepackage{xcolor} % Falls du Farben verwenden möchtest
+% Definiere die Sprache JavaScript
+\lstdefinelanguage{JavaScript}{
+    keywords={async, await, try, catch, const, let, if, else, return, throw, Promise},
+    ndkeywords={true, false, null},
+    sensitive=true,
+    comment=[l]{//},
+    morecomment=[s]{/*}{*/},
+    morestring=[b]",
+    morestring=[b]'
+}

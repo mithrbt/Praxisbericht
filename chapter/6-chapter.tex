@@ -1,14 +1,15 @@
 \chapter{Einzelne Aspekte der Implementierung}
-In diesem Kapitel werden die Hauptfunktionen und Module des Backends erläutert, (die ich während des Projekts entwickelt habe). Dabei werden die zugrunde liegende Architektur, der Datenfluss und die Interaktion der einzelnen Komponenten detailliert beschrieben. Auch Herausforderungen, die im Verlauf der Implementierung aufgetreten sind, werden thematisiert, um die Lösungsansätze und Entscheidungsprozesse nachvollziehbar darzustellen.
-\section{Service-orientierte Model-View-Controller-Architektur}
-Für das Projekt wurde eine service-orientierte Model-View-Controller (MVC)-Architektur gewählt, die eine klare Trennung der Verantwortlichkeiten ermöglicht und eine hohe Modularität aufweist. Diese Architektur bietet den Vorteil, dass die Codebasis leicht erweiterbar bleibt, was besonders wichtig war, da die Anforderungen im Verlauf des Projekts mehrfach angepasst wurden.
-\subsection*{Aufbau und Funktion der einzelnen Komponenten}
+In diesem Kapitel werden die Hauptfunktionen und Module des Backends erläutert. Dabei werden die zugrunde liegende Architektur, der Datenfluss und die Interaktion der einzelnen Komponenten detailliert beschrieben. Auch Herausforderungen, die im Verlauf der Implementierung aufgetreten sind, werden thematisiert, um die Lösungsansätze und Entscheidungsprozesse nachvollziehbar darzustellen.
+\newline
+\newline
+Für das Projekt wurde eine service-orientierte \ac{MVC}-Architektur gewählt, die eine klare Trennung der Verantwortlichkeiten ermöglicht und eine hohe Modularität aufweist. Diese Architektur bietet den Vorteil, dass die Codebasis leicht erweiterbar bleibt, was besonders wichtig war, da die Anforderungen im Verlauf des Projekts mehrfach angepasst wurden.
+\subsubsection*{Aufbau und Funktion der einzelnen Komponenten}
 Jede Entität verfügt über einen eigenen Controller, der die Anfragen des Clients verarbeitet und die Schnittstelle zur Außenwelt darstellt. Der Controller übernimmt die Kommunikation und Steuerung, indem er eingehende Anfragen validiert, die zuständigen Services aufruft und die Antworten in einem geeigneten Format an den Client zurückgibt. So bleibt die Controller-Schicht schlank und frei von Geschäftslogik, da diese vollständig in die Service-Schicht ausgelagert ist.
 \newline
 In der Service-Schicht wird die Geschäftslogik gekapselt und die Interaktion mit der Datenbank verwaltet. Hier werden alle geschäftsrelevanten Operationen implementiert, wie etwa das Verarbeiten von CRUD-Operationen (Create, Read, Update, Delete) für die einzelnen Entitäten. Durch die zentrale Bündelung der Geschäftslogik in den Services bleibt diese unabhängig von der Controller-Schicht und kann für verschiedene Anwendungsfälle wiederverwendet werden.
 \newline
 Die Entitäten definieren die Struktur der Daten und die Beziehungen zwischen den Objekten, die in der PostgreSQL-Datenbank gespeichert werden. Mithilfe von TypeORM, einem objekt-relationalen Mapper (ORM), werden die Entitäten automatisch mit der Datenbank synchronisiert. TypeORM abstrahiert dabei die Datenbankoperationen und ermöglicht so eine vereinfachte und fehlerfreie Datenverwaltung. Diese Abstraktion erleichtert die Wartung und Weiterentwicklung der Datenstruktur, da Änderungen in der Datenbank über das ORM gesteuert und in den Entitäten abgebildet werden können.
-\subsection*{API-Integration zur Datenabfrage externer Ressourcen}
+\subsubsection*{API-Integration zur Datenabfrage externer Ressourcen}
 Eine wesentliche Anforderung im Projekt war die Anbindung an das Merida Hub Playground, um Flotten- und Fahrzeugdaten in das Anfragetool zu integrieren und den Benutzern zur Verfügung zu stellen. Hierfür wurde eine API-basierte Kommunikation entwickelt, die Daten aus externen Quellen abruft und in das System importiert.
 \newline
 Zur Echtzeitabfrage der Daten von Flotten und Fahrzeugen wurden Methoden implementiert, die über HTTP-Requests auf die Endpunkte der Merida-Hub-API zugreifen. Diese Methoden greifen auf Authentifizierungsdaten und eine gesicherte HTTPS-Verbindung zurück, um den API-Zugriff sicherzustellen.
@@ -61,18 +62,22 @@ Ein Beispiel für die Methode zur Abfrage von Fahrzeugdaten einer spezifischen F
     }
 \end{lstlisting}
 Diese Methode ermöglicht es, die Fahrzeugdaten strukturiert zu verarbeiten und die relevanten Informationen wie Fahrzeug- und Flotten-IDs und Namen in einem formatgerechten Objekt abzubilden. Dadurch wird sichergestellt, dass die Daten korrekt und übersichtlich im Anfragetool angezeigt werden können.
-\subsection*{Herausforderungen und Lösungsansätze bei der API Integration}
+\subsubsection*{Herausforderungen und Lösungsansätze bei der API Integration}
 Bei der API-Integration traten mehrere Herausforderungen auf, wie die Authentifizierung für den API-Zugriff und das Management von Datenformaten, da es am Anfang Probleme beim Abrufen der Daten im Frontend gab, mussten die Daten in das richtige Format gebracht werden. Diese Herausforderungen wurden durch folgende Maßnahmen gelöst:
 \begin{itemize}
     \item Sichere HTTPS-Verbindungen und Authentifizierung über httpsAgent, um die Integrität der Datenübertragung sicherzustellen.
-    \item Transformation der abgerufenen Daten, wie im obigen Code gezeigt, um unstrukturierte Informationen in das entsprechende Format bereitzustellen.
+    \item Transformation der abgerufenen Daten, wie im obigen Code gezeigt, um Informationen in dem entsprechende Format bereitzustellen.
 \end{itemize}
-\subsection*{Entscheidungsgründe für die Architektur}
-Die Entscheidung für die service-orientierte MVC-Architektur basiert auf mehreren Faktoren:
+\subsubsection*{Entscheidungsgründe für die Architektur}
+Die Entscheidung für die service-orientierte MVC-Architektur basiert auf mehreren folgenden Faktoren:
 \begin{itemize}
     \item Klare Trennung der Verantwortlichkeiten: Die Aufteilung in Controller, Service und Entitäten stellt sicher, dass jede Funktionalität in ihrem eigenen Bereich implementiert wird, was die Übersichtlichkeit und Wartbarkeit des Codes erhöht.
     \item Erweiterbarkeit: Durch die lose Kopplung zwischen den Schichten lassen sich neue Funktionen leicht hinzufügen, ohne dass bestehende Komponenten stark verändert werden müssen.
     \item Flexibilität bei unklaren Anforderungen: Da sich die Anforderungen im Laufe des Projekts mehrfach geändert haben, ermöglichte die modulare Struktur eine schnelle Anpassung und Erweiterung der Anwendung.
     \item Wiederverwendbarkeit der Geschäftslogik: Da die Geschäftslogik zentral in der Service-Schicht angesiedelt ist, können die Services von verschiedenen Controllern aufgerufen und flexibel für unterschiedliche Endpunkte genutzt werden.
 \end{itemize}
+\subsubsection*{Interaktion der Module und Datenfluss}
+Der Datenfluss innerhalb der Anwendung folgt einem klaren Ablauf. Die Anfragen des Clients werden vom Controller empfangen und an den entsprechenden Service weitergeleitet. Im Service wird dann die Logik zur Bearbeitung der Anfrage ausgeführt. Bei Bedarf werden Datenbankabfragen initiiert, um Daten abzurufen oder zu aktualisieren. Die Antwort wird anschließend wieder an den Controller zurückgegeben und in einem geeigneten Format an den Client gesendet. Diese Struktur fördert die Nachvollziehbarkeit der Datenflüsse und vereinfacht die Fehlersuche und Wartung.
+\newline
+Insgesamt erlaubt diese Architektur eine strukturierte Entwicklung der Hauptfunktionen und Module und stellt sicher, dass die Anwendung flexibel bleibt. Die Trennung der Logik in die Module gewährleistet zudem, dass die Implementierung leicht anpassbar und wartbar ist, was für die Erweiterung und die Anpassungsfähigkeit des Projekts entscheidend ist.
 \label{chap:kapitel6}

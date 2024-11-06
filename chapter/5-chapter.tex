@@ -1,14 +1,54 @@
 \chapter{Konzeption}
-In diesem Kapitel wird der konzeptionelle Entwurf der entwickelten Lösung detailliert beschrieben. Die Konzeption umfasst alle wesentlichen Aspekte der Systemarchitektur, der Prozessabläufe sowie der Benutzeroberflächen. Dabei war es entscheidend, sowohl die technischen Anforderungen als auch die Nutzerbedürfnisse optimal zu berücksichtigen.
+In diesem Kapitel wird der konzeptionelle Entwurf der entwickelten Lösung detailliert beschrieben. Die Konzeption umfasst alle wesentlichen Aspekte der Benutzeroberfläche, der Prozessabläufe sowie der Systemarchitektur. Dabei war es entscheidend, sowohl die technischen Anforderungen als auch die Nutzerbedürfnisse optimal zu berücksichtigen.
 \newline
-Zunächst wird der Workflow des Anfrageprozesses dargestellt, um die Abfolge und Logik der einzelnen Prozessschritte zu veranschaulichen. Dies bildet die Grundlage für die spätere Implementierung der Abläufe und dient dazu, alle Beteiligten über die genauen Prozessschritte zu informieren.
+Zunächst werden die Mockups vorgestellt, die die geplanten Benutzeroberflächen visualisieren. Diese grafischen Entwürfe dienen als Grundlage für die spätere Implementierung der Benutzeroberfläche und helfen dabei, die Nutzerinteraktionen und das Design bereits in der frühen Phase des Projekts zu planen.
 \newline
-Daraufhin folgt das UML-Diagramm, das die Backend-Struktur des Systems beschreibt. Das Diagramm verdeutlicht die technischen Komponenten sowie deren Beziehungen zueinander.
+Daraufhin wird der Workflow des Anfrageprozesses dargestellt, um die Abfolge und Logik der einzelnen Prozessschritte zu veranschaulichen. Dies bildet die Grundlage für die spätere Implementierung der Abläufe und dient dazu, alle Beteiligten über die genauen Prozessschritte zu informieren.
 \newline
-Schließlich werden die Mockups vorgestellt, die die geplanten Benutzeroberflächen visualisieren. Diese grafischen Entwürfe dienen als Grundlage für die spätere Implementierung der Benutzeroberfläche und helfen dabei, die Nutzerinteraktionen und das Design bereits in der frühen Phase des Projekts zu planen.
+Abschließend wird die Systemarchitektur präsentiert, die das fundamentale Gerüst der gesamten Anwendung bildet. Die Architektur beschreibt die wichtigsten Komponenten und deren Interaktionen, um eine stabile, skalierbare und erweiterbare Lösung zu gewährleisten.
 \newline
-Die einzelnen Konzepte in den folgenden Unterkapiteln bieten somit einen umfassenden Überblick über die geplante Systemarchitektur, den Prozessablauf und die Benutzerführung.
+Die einzelnen Konzepte in den folgenden Unterkapiteln bieten somit einen umfassenden Überblick über die geplante Systemarchitektur, den Prozessablauf und die Benutzerführung???
 \newpage
+\section{Mockups}
+Im Verlauf der Entwicklung des IAV Merida Request wurden regelmäßig Gespräche mit verschiedenen Stakeholdern geführt. Diese Interaktionen führten zur schrittweisen Anpassung der Mockups, die auf den gewonnenen Erkenntnissen basierten. Dadurch konnten die Mockups kontinuierlich an die sich entwickelnden Anforderungen und das gewünschte User Interface angepasst werden. Im Folgenden wird der Entwicklungsprozess der Mockups sowie deren verschiedene Versionen detailliert dargestellt.
+\subsection*{Mockup 1}
+In der ersten Version der Mockups, s. Abbildung \ref{fig:MockUps1.0}, orientierten sich die Designentscheidungen stark am BMW Request Channel. Die Struktur und die Benutzeroberfläche in dieser Phase waren relativ einfach gehalten, mit einem klaren Fokus auf die wesentlichen Eingabefelder und -optionen, die für das Anfordern von Daten und Analysen benötigt wurden.
+\newline
+Wichtige Merkmale dieser Version:
+\begin{itemize}
+    \item Eine klare und strukturierte Eingabe für persönliche Details, Datenanforderungen und den gewünschten Ausgabetyp (z.B. „Raw Data“ oder „Analysis“).
+    \item Es wurde darauf geachtet, dass die Navigation zwischen den Schritten unkompliziert und intuitiv ist, allerdings war das Design noch stark an dem Layout des BMW Request Channel angelehnt.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.2]{media/MockUps1.0}
+    \caption{Mockup 1}
+    \label{fig:MockUps1.0}
+\end{figure}
+\subsection*{Mockup 2}
+Mit der zweiten Version, s. Abbildung \ref{fig:MockUps2.0}, wurde das Interface weiterentwickelt und dabei von der ursprünglichen BMW-Anlehnung gelöst. Es entstand ein individuelleres Design, das besser auf die spezifischen Anforderungen des Projekts zugeschnitten war. Dabei lag der Fokus auf einer verbesserten Benutzerführung und einer klareren Strukturierung der Formulare. Die Eingabefelder wurden optimiert, um eine bessere Lesbarkeit zu gewährleisten, und die Navigation wurde an den Workflow der Benutzer angepasst. Zusätzliche Hilfetexte und visuelle Hinweise führten den Benutzer durch den gesamten Anforderungsprozess. Diese Version stellte einen ersten großen Schritt in Richtung eines eigenständigen Tools dar.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.2]{media/MockUps2.0}
+    \caption{Mockup 2}
+    \label{fig:MockUps2.0}
+\end{figure}
+\subsection*{Mockup 3 (Aktueller Stand)}
+Das in der Abbildung \ref{fig:MockUps3.0} dargestellte Mockup repräsentiert den aktuellen Stand der Entwicklung und zeigt eine weiterentwickelte und verfeinerte Benutzeroberfläche. Hier liegt der Schwerpunkt darauf, ein ausgereiftes und benutzerfreundliches System anzubieten, das sowohl funktional als auch optisch ansprechend ist.
+\newline
+Wichtige Änderungen in dieser Version:
+\begin{itemize}
+    \item Das Interface wirkt nun deutlich moderner und aufgeräumter. Es gibt eine klare Hierarchie in der Darstellung der Informationen, und die wichtigsten Optionen (wie die Auswahl des gewünschten Ausgabetyps) sind hervorgehoben.
+    \item Es wurden weitere Schritte hinzugefügt, um den Benutzer durch den Prozess der Datenauswahl und Anforderung zu führen. Dazu gehören zusätzliche Kategorien für detailliertere Analysen und eine präzisere Auswahl an Flotten und Fahrzeugen.
+    \item Der Workflow ist flexibler gestaltet, sodass Benutzer Anfragen als Entwurf speichern und später bearbeiten können, was die Effizienz und Benutzerfreundlichkeit weiter erhöht.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.2]{media/MockUps3.0}
+    \caption{Mockup 3}
+    \label{fig:MockUps3.0}
+\end{figure}
+Zusammenfassend lässt sich sagen, dass sich das IAV Merida Request Tool durch einen iterativen Entwicklungsprozess erheblich weiterentwickelt hat. Während Mockup 1 noch stark an bestehende Lösungen angelehnt war, strebte Mockup 2 bereits ein eigenständiges Design mit klareren Nutzerführungen an. Mit Mockup 3 erreicht das Tool nun ein hohes Maß an Benutzerfreundlichkeit, Flexibilität und Funktionalität, das den Anforderungen der Benutzer in vollem Umfang gerecht wird.
 \section{Workflow}
 Der dargestellte Workflow (s. Abbildung \ref{fig:Workflow}) beschreibt den vollständigen Ablauf eines Anfrageprozesses, der mehrere Phasen durchläuft, um eine effiziente und strukturierte Bearbeitung sicherzustellen. Dieser Prozess beginnt mit der Erstellung einer Anfrage und endet mit der finalen Analyse und Bewertung durch den Anfragenden.
 \subsection*{Entwurfsphase (Draft)}
@@ -59,44 +99,4 @@ Zusammengefasst visualisiert das UML-Diagramm die Kernkomponenten des IAV Merida
     \label{fig:UML_Diagramm}
 \end{figure}
 \newpage
-\section{Mockups}
-Im Verlauf der Entwicklung des IAV Merida Request wurden mehrere Iterationen von Mockups erstellt, die schrittweise den Anforderungen und dem gewünschten User Interface angepasst wurden. Hier ist ein Überblick über die unterschiedlichen Versionen:
-\subsection*{Mockup 1}
-In der ersten Version der Mockups, s. Abbildung \ref{fig:MockUps1.0}, orientierten sich die Designentscheidungen stark am BMW Request Channel. Die Struktur und die Benutzeroberfläche in dieser Phase waren relativ einfach gehalten, mit einem klaren Fokus auf die wesentlichen Eingabefelder und -optionen, die für das Anfordern von Daten und Analysen benötigt wurden.
-\newline
-Wichtige Merkmale dieser Version:
-\begin{itemize}
-    \item Eine klare und strukturierte Eingabe für persönliche Details, Datenanforderungen und den gewünschten Ausgabetyp (z.B. „Raw Data“ oder „Analysis“).
-    \item Es wurde darauf geachtet, dass die Navigation zwischen den Schritten unkompliziert und intuitiv ist, allerdings war das Design noch stark an dem Layout des BMW Request Channel angelehnt.
-\end{itemize}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=.2]{media/MockUps1.0}
-    \caption{Mockup 1}
-    \label{fig:MockUps1.0}
-\end{figure}
-\subsection*{Mockup 2}
-Mit der zweiten Version, s. Abbildung \ref{fig:MockUps2.0}, wurde das Interface weiterentwickelt und dabei von der ursprünglichen BMW-Anlehnung gelöst. Es entstand ein individuelleres Design, das besser auf die spezifischen Anforderungen des Projekts zugeschnitten war. Dabei lag der Fokus auf einer verbesserten Benutzerführung und einer klareren Strukturierung der Formulare. Die Eingabefelder wurden optimiert, um eine bessere Lesbarkeit zu gewährleisten, und die Navigation wurde an den Workflow der Benutzer angepasst. Zusätzliche Hilfetexte und visuelle Hinweise führten den Benutzer durch den gesamten Anforderungsprozess. Diese Version stellte einen ersten großen Schritt in Richtung eines eigenständigen Tools dar.
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=.2]{media/MockUps2.0}
-    \caption{Mockup 2}
-    \label{fig:MockUps2.0}
-\end{figure}
-\subsection*{Mockup 3 (Aktueller Stand)}
-Das in der Abbildung \ref{fig:MockUps3.0} dargestellte Mockup repräsentiert den aktuellen Stand der Entwicklung und zeigt eine weiterentwickelte und verfeinerte Benutzeroberfläche. Hier liegt der Schwerpunkt darauf, ein ausgereiftes und benutzerfreundliches System anzubieten, das sowohl funktional als auch optisch ansprechend ist.
-\newline
-Wichtige Änderungen in dieser Version:
-\begin{itemize}
-    \item Das Interface wirkt nun deutlich moderner und aufgeräumter. Es gibt eine klare Hierarchie in der Darstellung der Informationen, und die wichtigsten Optionen (wie die Auswahl des gewünschten Ausgabetyps) sind hervorgehoben.
-    \item Es wurden weitere Schritte hinzugefügt, um den Benutzer durch den Prozess der Datenauswahl und Anforderung zu führen. Dazu gehören zusätzliche Kategorien für detailliertere Analysen und eine präzisere Auswahl an Flotten und Fahrzeugen.
-    \item Der Workflow ist flexibler gestaltet, sodass Benutzer Anfragen als Entwurf speichern und später bearbeiten können, was die Effizienz und Benutzerfreundlichkeit weiter erhöht.
-\end{itemize}
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=.2]{media/MockUps3.0}
-    \caption{Mockup 3}
-    \label{fig:MockUps3.0}
-\end{figure}
-Zusammenfassend lässt sich sagen, dass sich das IAV Merida Request Tool durch einen iterativen Entwicklungsprozess erheblich weiterentwickelt hat. Während Mockup 1 noch stark an bestehende Lösungen angelehnt war, strebte Mockup 2 bereits ein eigenständiges Design mit klareren Nutzerführungen an. Mit Mockup 3 erreicht das Tool nun ein hohes Maß an Benutzerfreundlichkeit, Flexibilität und Funktionalität, das den Anforderungen der Benutzer in vollem Umfang gerecht wird.
 \label{chap:kapitel5}

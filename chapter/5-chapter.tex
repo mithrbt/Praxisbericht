@@ -50,7 +50,7 @@ Wichtige Änderungen in dieser Version:
 \end{figure}
 Zusammenfassend lässt sich sagen, dass sich das IAV Merida Request Tool durch einen iterativen Entwicklungsprozess erheblich weiterentwickelt hat. Während Mockup 1 noch stark an bestehende Lösungen angelehnt war, strebte Mockup 2 bereits ein eigenständiges Design mit klareren Nutzerführungen an. Mit Mockup 3 erreicht das Tool nun ein hohes Maß an Benutzerfreundlichkeit, Flexibilität und Funktionalität, das den Anforderungen der Benutzer in vollem Umfang gerecht wird.
 \section{Workflow}
-Der dargestellte Workflow (s. Abbildung \ref{fig:Workflow}) beschreibt den vollständigen Ablauf eines Anfrageprozesses, der mehrere Phasen durchläuft, um eine effiziente und strukturierte Bearbeitung sicherzustellen. Dieser Prozess beginnt mit der Erstellung einer Anfrage und endet mit der finalen Analyse und Bewertung durch den Anfragenden.
+Der dargestellte Workflow (s. Abbildung \ref{fig:Workflow}) beschreibt den vollständigen Ablauf eines Anfrageprozesses, der mehrere Phasen durchläuft, um eine effiziente und strukturierte Bearbeitung sicherzustellen. Dieser Prozess beginnt mit der Erstellung einer Anfrage und endet mit der finalen Analyse.
 \subsection*{Entwurfsphase (Draft)}
 Der Prozess beginnt mit der Erstellung der Anfrage. In dieser Phase bereitet der Antragsteller alle relevanten Informationen vor, die für die Anfrage notwendig sind. Die Anfrage wird jedoch noch nicht an die zuständigen Personen gesendet, sondern verbleibt als Entwurf. Hier kann der Antragsteller die Anfrage noch überarbeiten, Details hinzufügen oder Anpassungen vornehmen. Der Entwurfsstatus ermöglicht es, die Anfrage zu optimieren, bevor sie offiziell eingereicht wird. Sobald der Antragsteller alle notwendigen Informationen eingetragen hat und bereit ist, die Anfrage weiterzuleiten, wird diese in den nächsten Schritt überführt.
 \subsection*{Offene Phase (Open)}
@@ -83,7 +83,7 @@ In dieser finalen Phase spielt die Kommunikation zwischen dem Analysten und dem 
 \end{figure}
 \newpage
 \section{Architektur}
-Die Architektur der entwickelten Softwarelösung basiert auf modernen, skalierbaren und wartbaren Technologien, die auf die spezifischen Anforderungen des Projekts abgestimmt sind. Das System besteht aus drei Hauptkomponenten: dem Backend, das mit NestJS entwickelt wurde, dem Frontend das auf React basiert und einer relationalen Datenbank, die durch PostgreSQL unterstützt wird. Um eine flexible und isolierte Datenbankumgebung zu gewährleisten wird PostgreSQL über Docker containerisiert, was eine einfacge Bereitstellung und Verwaltung verschiedener Entwciklungs- und Produktionsumgebungen ermöglicht.
+Die Architektur der entwickelten Softwarelösung basiert auf modernen, skalierbaren und wartbaren Technologien, die auf die spezifischen Anforderungen des Projekts abgestimmt sind. Das System besteht aus drei Hauptkomponenten: dem Backend, das mit NestJS entwickelt wurde, dem Frontend das auf React basiert und einer relationalen Datenbank, die durch PostgreSQL unterstützt wird. Um eine flexible und isolierte Datenbankumgebung zu gewährleisten wird PostgreSQL über Docker containerisiert, was eine einfache Bereitstellung und Verwaltung verschiedener Entwicklungs- und Produktionsumgebungen ermöglicht.
 \newline
 \newline
 Das Frontend wird im Rahmen einer Microfrontend-Architektur entwickelt, bei der das React-basierte Interface als eine von mehreren Anwendungen innerhalb eines größeren Systems integriert wird. Diese Architektur ermöglicht es, unterschiedliche Frontends, die mit verschiedenen Technologien entwickelt wurden, nahtlos zu kombinieren und gleichzeitig eine modulare Struktur beizubehalten. Jede Anwendung (Microfrontend) ist in sich eigenständig, kann aber über standardisierte Schnittstellen miteinander kommunizieren. Auf diese Weise können unterschiedliche Technologien und Teams gleichzeitig an verschiedenen Microfrontends arbeiten, was die Flexibilität und Skalierbarkeit des Systems erhöht.
@@ -91,7 +91,15 @@ Das Frontend wird im Rahmen einer Microfrontend-Architektur entwickelt, bei der 
 \newline
 NestJS bietet eine robuste und strukturierte Grundlage für die Backend-Entwicklung. Dabei stellt die serviceorientierte Architektur in Kombination mit der \ac{MVC}-Architektur sicher, die von NestJS vorgegeben wird, dass die Geschäftslogik effizient isoliert und die verschiedenen Komponenten voneinander getrennt sind.
 \newline
-Die Kommunikation zwischen den einzelnen Komponenten erfolgt über klar definierte Schnittstellen und standardisierte Protokolle. Das Frontend interagiert mit dem BAckend über HTTP-APIs unter Verwendung von RESTful-Endpunkten. Diese APIs ermöglichen eine effiziente und flexible Kommunikation zwischen benutzeroberfläche und Serverlogik, wobei JSON als Standardformat für die Datenübertragung verwendet wird.
+Die Kommunikation zwischen den einzelnen Komponenten erfolgt über klar definierte Schnittstellen und standardisierte Protokolle. Das Frontend interagiert mit dem Backend über HTTP-APIs unter Verwendung von RESTful-Endpunkten. Diese APIs ermöglichen eine effiziente und flexible Kommunikation zwischen benutzeroberfläche und Serverlogik, wobei JSON als Standardformat für die Datenübertragung verwendet wird.
 \newline
 Das NestJS-Backend übernimmt die zentrale Rolle in der Geschäftslogik des Systems. Es stellt den Datenzugriff auf die PostgreSQL-Datenbank bereit und kümmert sich um die Verarbeitung der Daten. Die Datenbank wird über ein \ac{ORM} angesprochen, in diesem Fall ein TypeORM, was eine effiziente und strukturierte Kommunikation zwischen den Anwendungen und der relationalen Datenbank ermöglicht.
+Mittels der folgenden Abbildung wird verdeutlicht, wie die einzelnen Schichten miteinander kommunizieren.
+\newline
+\newline
+Mithilfe des folgenden Komponentendiagramms (siehe Abbildung XY) werden die Schnittstellen zwischen Backend, Frontend und Datenbank sowie die Verbindungen zu anderen Systemen dargestellt. Das Backend ruft die im IAV Merida Hub gespeicherten Flotten und dazugehörigen Fahrzeuge ab, sodass der Nutzer im Frontend Flotten und optional auch Fahrzeuge auswählen kann, zu denen er Messdaten oder Analysen einsehen möchte.
+\newline
+Neben Merida Request gibt es im IAV Merida Explorer derzeit weitere Module, darunter den Merida Transmitter, der für einen gesicherten und automatisierten Upload von Messdaten aus unterschiedlichen Quellen verantwortlich ist. Der Merida Signals Web bietet einen direkten Einblick in die verfügbaren Messdaten, und der Merida Finder ermöglicht es dem Nutzer, mithilfe einer speziellen Suchmaske komplexe Suchanfragen über alle Messungen hinweg zu stellen. Im Merida Dashboard werden schließlich verschiedene Analysen der Daten visualisiert.
+\newline
+Im aktuellen Projekt noch nicht umgesetzt, jedoch perspektivisch geplant, ist die Integration einer Schnittstelle zu Confluence, um Data Analysts die Dokumentation zu einzelnen Anfragen zu erleichtern.
 \label{chap:kapitel5}

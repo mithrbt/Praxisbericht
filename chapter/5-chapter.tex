@@ -82,21 +82,16 @@ In dieser finalen Phase spielt die Kommunikation zwischen dem Analysten und dem 
     \label{fig:Workflow}
 \end{figure}
 \newpage
-\section{UML-Diagramm}
-Das UML-Diagramm (s. Abbildung \ref{fig:UML_Diagramm}) veranschaulicht die zentrale Struktur des IAV Merida Request-Tools und modelliert die Klassen sowie deren Beziehungen im Backend. Im Zentrum steht die Klasse \texttt{Request}, die eine einzelne Anfrage repräsentiert. Diese Klasse enthält Attribute wie eine eindeutige ID, einen Titel sowie das Erstellungsdatum und enthält somit die grundlegenden Informationen der jeweiligen Anfrage.
+\section{Architektur}
+Die Architektur der entwickelten Softwarelösung basiert auf modernen, skalierbaren und wartbaren Technologien, die auf die spezifischen Anforderungen des Projekts abgestimmt sind. Das System besteht aus drei Hauptkomponenten: dem Backend, das mit NestJS entwickelt wurde, dem Frontend das auf React basiert und einer relationalen Datenbank, die durch PostgreSQL unterstützt wird. Um eine flexible und isolierte Datenbankumgebung zu gewährleisten wird PostgreSQL über Docker containerisiert, was eine einfacge Bereitstellung und Verwaltung verschiedener Entwciklungs- und Produktionsumgebungen ermöglicht.
 \newline
-Die Klasse \texttt{Request} ist zudem mit mehreren Enumerationen verknüpft: \texttt{State}, \texttt{Output} und \texttt{Report}. Die Enumeration \texttt{State} beschreibt den aktuellen Status der Anfrage und ermöglicht es, den Fortschritt der Anfrage nachzuvollziehen. So können Anfragen beispielsweise als \texttt{NEW}, \texttt{IN\_PROGRESS} oder \texttt{COMPLETED} markiert werden. Das Enumeration \texttt{Output} beschreibt das gewünschte Ausgabeformat der Anfrage, welches in Form von \texttt{REPORT}, \texttt{TRACES} oder \texttt{CONVERSION} erfolgen kann. Zusätzlich unterteilt die Enumeration \texttt{Report} den Bericht in verschiedene Typen, beispielsweise \texttt{STATIC\_REPORT}, \texttt{DYNAMIC\_REPORT} oder \texttt{FILE\_EXPORT}. Dabei ist zu beachten, dass jede Anfrage genau einen Status und einen spezifischen Berichtstyp haben kann.
 \newline
-Eine weitere zentrale Komponente im System ist die Klasse \texttt{Vehicle}. Diese beschreibt Fahrzeuge, die einer Anfrage zugeordnet werden können. Eine Anfrage kann mehrere Fahrzeuge umfassen, wobei jedes Fahrzeug genau einer Anfrage zugeordnet ist. Ein ähnliches Verhältnis besteht zwischen der Klasse \texttt{Request} und der Klasse \texttt{Fleet}. Flotten und Fahrzeuge stehen ebenfalls in einer Beziehung zueinander, sodass bei Auswahl einer bestimmten Flotte die dazugehörigen Fahrzeuge angezeigt werden.
+Das Frontend wird im Rahmen einer Microfrontend-Architektur entwickelt, bei der das React-basierte Interface als eine von mehreren Anwendungen innerhalb eines größeren Systems integriert wird. Diese Architektur ermöglicht es, unterschiedliche Frontends, die mit verschiedenen Technologien entwickelt wurden, nahtlos zu kombinieren und gleichzeitig eine modulare Struktur beizubehalten. Jede Anwendung (Microfrontend) ist in sich eigenständig, kann aber über standardisierte Schnittstellen miteinander kommunizieren. Auf diese Weise können unterschiedliche Technologien und Teams gleichzeitig an verschiedenen Microfrontends arbeiten, was die Flexibilität und Skalierbarkeit des Systems erhöht.
 \newline
-Darüber hinaus gibt es die Klasse \texttt{BasicData}, die alle grundlegenden Informationen einer Anfrage, wie den Titel und das Ziel, speichert. Die Klasse \texttt{TimePeriod} spezifiziert die Zeitspanne, über die eine Messung oder Analyse hinweg durchgeführt wird. Um Anfragen einer bestimmten Person zuzuordnen, existiert die Klasse \texttt{Person}, in der die Eckdaten des Users gespeichert sind, der die Anfrage erstellt.
 \newline
-Zusammengefasst visualisiert das UML-Diagramm die Kernkomponenten des IAV Merida Request-Tools sowie deren Beziehungen. Es bietet einen klaren Überblick über die Art und Weise, wie Anfragen erfasst, verfolgt und durch Berichte sowie Ausgabeformen ergänzt werden können. Die Beziehungen zwischen den Klassen sorgen für eine flexible Verwaltung, während die verschiedenen Berichtstypen und Ausgabemöglichkeiten das System erweitern.
-\begin{figure}[H]
-    \centering
-    \includegraphics[angle=90, scale=.45]{media/UML_Diagramm}
-    \caption{UML-Diagramm}
-    \label{fig:UML_Diagramm}
-\end{figure}
-\newpage
+NestJS bietet eine robuste und strukturierte Grundlage für die Backend-Entwicklung. Dabei stellt die serviceorientierte Architektur in Kombination mit der \ac{MVC}-Architektur sicher, die von NestJS vorgegeben wird, dass die Geschäftslogik effizient isoliert und die verschiedenen Komponenten voneinander getrennt sind.
+\newline
+Die Kommunikation zwischen den einzelnen Komponenten erfolgt über klar definierte Schnittstellen und standardisierte Protokolle. Das Frontend interagiert mit dem BAckend über HTTP-APIs unter Verwendung von RESTful-Endpunkten. Diese APIs ermöglichen eine effiziente und flexible Kommunikation zwischen benutzeroberfläche und Serverlogik, wobei JSON als Standardformat für die Datenübertragung verwendet wird.
+\newline
+Das NestJS-Backend übernimmt die zentrale Rolle in der Geschäftslogik des Systems. Es stellt den Datenzugriff auf die PostgreSQL-Datenbank bereit und kümmert sich um die Verarbeitung der Daten. Die Datenbank wird über ein \ac{ORM} angesprochen, in diesem Fall ein TypeORM, was eine effiziente und strukturierte Kommunikation zwischen den Anwendungen und der relationalen Datenbank ermöglicht.
 \label{chap:kapitel5}

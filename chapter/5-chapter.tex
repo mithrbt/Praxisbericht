@@ -6,8 +6,6 @@ Zunächst werden die Mockups vorgestellt, die die geplanten Benutzeroberflächen
 Daraufhin wird der Workflow des Anfrageprozesses dargestellt, um die Abfolge und Logik der einzelnen Prozessschritte zu veranschaulichen. Dies bildet die Grundlage für die spätere Implementierung der Abläufe und dient dazu, alle Beteiligten über die genauen Prozessschritte zu informieren.
 \newline
 Abschließend wird die Systemarchitektur präsentiert, die das fundamentale Gerüst der gesamten Anwendung bildet. Die Architektur beschreibt die wichtigsten Komponenten und deren Interaktionen, um eine stabile, skalierbare und erweiterbare Lösung zu gewährleisten.
-\newline
-Die einzelnen Konzepte in den folgenden Unterkapiteln bieten somit einen umfassenden Überblick über die geplante Systemarchitektur, den Prozessablauf und die Benutzerführung???
 \newpage
 \section{Mockups}
 Im Verlauf der Entwicklung des IAV Merida Request wurden regelmäßig Gespräche mit verschiedenen Stakeholdern geführt. Diese Interaktionen führten zur schrittweisen Anpassung der Mockups, die auf den gewonnenen Erkenntnissen basierten. Dadurch konnten die Mockups kontinuierlich an die sich entwickelnden Anforderungen und das gewünschte User Interface angepasst werden. Im Folgenden wird der Entwicklungsprozess der Mockups sowie deren verschiedene Versionen detailliert dargestellt.
@@ -34,47 +32,40 @@ Mit der zweiten Version, s. Abbildung \ref{fig:MockUps2.0}, wurde das Interface 
     \label{fig:MockUps2.0}
 \end{figure}
 \subsection*{Mockup 3 (Aktueller Stand)}
-Das in der Abbildung \ref{fig:MockUps3.0} dargestellte Mockup repräsentiert den aktuellen Stand der Entwicklung und zeigt eine weiterentwickelte und verfeinerte Benutzeroberfläche. Hier liegt der Schwerpunkt darauf, ein ausgereiftes und benutzerfreundliches System anzubieten, das sowohl funktional als auch optisch ansprechend ist.
+Das in der Abbildung \ref{fig:MockUps3.0} dargestellte Mockup repräsentiert den aktuellen Stand der Entwicklung und zeigt eine weiterentwickelte und verfeinerte Benutzeroberfläche. Hier liegt der Schwerpunkt auf dem Outputformat eines Dashboards und darauf, ein ausgereiftes und benutzerfreundliches System anzubieten, das sowohl funktional als auch optisch ansprechend ist.
 \newline
 Wichtige Änderungen in dieser Version:
 \begin{itemize}
     \item Das Interface wirkt nun deutlich moderner und aufgeräumter. Es gibt eine klare Hierarchie in der Darstellung der Informationen, und die wichtigsten Optionen (wie die Auswahl des gewünschten Ausgabetyps) sind hervorgehoben.
-    \item Es wurden weitere Schritte hinzugefügt, um den Benutzer durch den Prozess der Datenauswahl und Anforderung zu führen. Dazu gehören zusätzliche Kategorien für detailliertere Analysen und eine präzisere Auswahl an Flotten und Fahrzeugen.
-    \item Der Workflow ist flexibler gestaltet, sodass Benutzer Anfragen als Entwurf speichern und später bearbeiten können, was die Effizienz und Benutzerfreundlichkeit weiter erhöht.
+    \item Die Benutzerführung wurde durch weitere Schritte verfeinert. Dazu gehören neue Kategorien für Diagrammtypen sowie eine präzisere Auswahloption für Flotten und Fahrzeuge. Die Auswahl erfolgt nun über eine Drag-and-Drop-Funktion, was die Bedienung vereinfacht und intuitiver gestaltet.
+    \item Der Nutzer kann nun mehrere Diagramme im Stil eines Dashboards anlegen und konfigurieren. Am Ende des Prozesses erhält er eine zusammenfassende Übersicht über die erstellte Anfrage.
+    \item Benutzer haben jetzt die Möglichkeit, Anfragen als Entwurf zu speichern und später weiterzubearbeiten. Diese Funktion erhöht die Effizienz und unterstützt eine flexible Arbeitsweise. 
 \end{itemize}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.2]{media/MockUps3.0}
+    \includegraphics[scale=.25]{media/MockUps3.0}
     \caption{Mockup 3}
     \label{fig:MockUps3.0}
 \end{figure}
-Zusammenfassend lässt sich sagen, dass sich das IAV Merida Request Tool durch einen iterativen Entwicklungsprozess erheblich weiterentwickelt hat. Während Mockup 1 noch stark an bestehende Lösungen angelehnt war, strebte Mockup 2 bereits ein eigenständiges Design mit klareren Nutzerführungen an. Mit Mockup 3 erreicht das Tool nun ein hohes Maß an Benutzerfreundlichkeit, Flexibilität und Funktionalität, das den Anforderungen der Benutzer in vollem Umfang gerecht wird.
+Zusammenfassend lässt sich sagen, dass sich das IAV Merida Request Tool durch einen iterativen Entwicklungsprozess erheblich weiterentwickelt hat. Während Mockup 1 noch stark an bestehende Lösungen angelehnt war, strebte Mockup 2 bereits ein eigenständiges Design mit klareren Nutzerführungen an. Mit Mockup 3 erreicht das Tool nun ein hohes Maß an Benutzerfreundlichkeit, Flexibilität und Funktionalität, dass den Anforderungen der Benutzer in vollem Umfang gerecht wird.
+\newpage
 \section{Workflow}
 Der dargestellte Workflow (s. Abbildung \ref{fig:Workflow}) beschreibt den vollständigen Ablauf eines Anfrageprozesses, der mehrere Phasen durchläuft, um eine effiziente und strukturierte Bearbeitung sicherzustellen. Dieser Prozess beginnt mit der Erstellung einer Anfrage und endet mit der finalen Analyse.
 \subsection*{Entwurfsphase (Draft)}
 Der Prozess beginnt mit der Erstellung der Anfrage. In dieser Phase bereitet der Antragsteller alle relevanten Informationen vor, die für die Anfrage notwendig sind. Die Anfrage wird jedoch noch nicht an die zuständigen Personen gesendet, sondern verbleibt als Entwurf. Hier kann der Antragsteller die Anfrage noch überarbeiten, Details hinzufügen oder Anpassungen vornehmen. Der Entwurfsstatus ermöglicht es, die Anfrage zu optimieren, bevor sie offiziell eingereicht wird. Sobald der Antragsteller alle notwendigen Informationen eingetragen hat und bereit ist, die Anfrage weiterzuleiten, wird diese in den nächsten Schritt überführt.
 \subsection*{Offene Phase (Open)}
-Nachdem die Anfrage finalisiert wurde, wird sie aus dem Entwurfsstatus herausgesendet. In der Phase \texttt{Open}  können nun die zuständigen Mitarbeiter die Anfrage einsehen.
-\newline
-Der nächste Schritt im Prozess ist die Entscheidung, ob die Anfrage akzeptiert wird. Wenn die Anfrage nicht akzeptiert wird, endet der Prozess an dieser Stelle und die Anfrage wird entweder abgelehnt oder zurückgezogen. In solchen Fällen wird keine weitere Bearbeitung vorgenommen, und der Anfragende wird informiert.
-\newline
-Wird die Anfrage hingegen akzeptiert, erfolgt die Zuweisung einer verantwortlichen Person, die die Bearbeitung übernimmt. Dieser Schritt ist entscheidend, da die Verantwortung für den weiteren Verlauf der Anfrage klar festgelegt wird.
+Sobald die Anfrage finalisiert ist, wird sie aus dem Entwurfsstatus versendet. In der Phase \texttt{Open} wird die Anfrage einer verantwortlichen Person zugewiesen, die anschließend die Bearbeitung übernimmt. Dieser Schritt ist entscheidend, da hierdurch die Verantwortung für den weiteren Verlauf eindeutig festgelegt wird.
 \subsection*{In Bearbeitung (In Progress)}
 In dieser Phase wird die Anfrage aktiv bearbeitet. Die verantwortliche Person prüft zunächst die Anfrage und den damit verbundenen Arbeitsaufwand. Ein wichtiger Entscheidungspunkt in diesem Abschnitt ist, ob es noch offene Fragen gibt, die mit dem Antragsteller geklärt werden müssen. Falls Fragen bestehen, wird der Antragsteller kontaktiert, um Unklarheiten zu beseitigen und gegebenenfalls zusätzliche Informationen anzufordern.
 \newline
 Sobald alle notwendigen Informationen vorliegen und alle Fragen geklärt sind, beginnt die Erstellung der Analyse. Diese Analyse kann je nach Anfrageumfang und -komplexität unterschiedlich viel Zeit in Anspruch nehmen. Die Analyse ist der Kern des Bearbeitungsprozesses, da hier die eigentliche Auswertung der angeforderten Daten oder Informationen stattfindet.
 \newline
 Während der Analysephase ist es weiterhin möglich, dass der Antragsteller oder die verantwortliche Person Rückfragen haben oder zusätzliche Details geklärt werden müssen. Es kann notwendig sein, dass eine enge Zusammenarbeit zwischen dem Analysten und dem Antragsteller erforderlich ist, um sicherzustellen, dass die Analyse den Erwartungen entspricht.
-\newline
-Parallel zur Analyse wird auch eine Einigung zwischen dem Analysten und dem Antragsteller getroffen. Hierbei wird geprüft, ob beide Seiten mit dem Fortschritt und den Bedingungen der Anfrage zufrieden sind. Sollte keine Einigung erzielt werden, wird der Prozess in die abgelehnte Phase überführt.
 \subsection*{Abgelehnt/Zur{\"u}ckgezogen (Rejected/Revoked)}
 Falls die Einigung zwischen dem Antragsteller und dem Analysten nicht erreicht wird, oder wenn während des Prozesses festgestellt wird, dass die Anfrage nicht weiter verfolgt werden kann, wird die Anfrage in den Status \texttt{Rejected} oder \texttt{Revoked} versetzt. Dieser Status beendet den Anfrageprozess vorzeitig. Gründe für diesen Abbruch könnten unklare Anforderungen, nicht erfüllbare Bedingungen oder andere Hindernisse sein, die den Abschluss der Anfrage verhindern.
 \subsection*{Abschlussphase (Done)}
-Ist die Analyse abgeschlossen und alle offenen Punkte geklärt, wird die Analyse an den Antragsteller gesendet. Der Antragsteller hat nun die Möglichkeit, die fertige Analyse zu überprüfen und zu bewerten, ob die Ergebnisse seinen Erwartungen entsprechen. Diese Phase ermöglicht es dem Antragsteller, die übermittelten Informationen detailliert zu prüfen und sicherzustellen, dass alle Anforderungen erfüllt sind.
+Sobald die Analyse abgeschlossen und alle offenen Punkte geklärt sind, wird das Ergebnis an den Antragsteller übermittelt. Mit der Zusendung der Analyse endet der Prozess, und der Status der Anfrage wird auf \texttt{Done} gesetzt.
 \newline
-Falls der Antragsteller nach der Überprüfung zufrieden ist, wird der Prozess abgeschlossen und der Status der Anfrage auf \texttt{Done} gesetzt. Sollte der Antragsteller noch weitere Fragen oder Anliegen haben, besteht die Möglichkeit, den Analysten zu kontaktieren, um diese Punkte zu klären. Der Prozess wird erst dann als abgeschlossen betrachtet, wenn der Antragsteller vollständig zufrieden ist und alle Anliegen gelöst wurden.
-\newline
-In dieser finalen Phase spielt die Kommunikation zwischen dem Analysten und dem Antragsteller eine wichtige Rolle, um sicherzustellen, dass alle Erwartungen erfüllt wurden und der Prozess erfolgreich abgeschlossen werden kann.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=.4]{media/Workflow}
@@ -83,23 +74,35 @@ In dieser finalen Phase spielt die Kommunikation zwischen dem Analysten und dem 
 \end{figure}
 \newpage
 \section{Architektur}
-Die Architektur der entwickelten Softwarelösung basiert auf modernen, skalierbaren und wartbaren Technologien, die auf die spezifischen Anforderungen des Projekts abgestimmt sind. Das System besteht aus drei Hauptkomponenten: dem Backend, das mit NestJS entwickelt wurde, dem Frontend das auf React basiert und einer relationalen Datenbank, die durch PostgreSQL unterstützt wird. Um eine flexible und isolierte Datenbankumgebung zu gewährleisten wird PostgreSQL über Docker containerisiert, was eine einfache Bereitstellung und Verwaltung verschiedener Entwicklungs- und Produktionsumgebungen ermöglicht.
+Die Architektur der entwickelten Softwarelösung basiert auf modernen, skalierbaren und wartbaren Technologien, die auf die spezifischen Anforderungen des Projekts abgestimmt sind. Das System besteht aus drei Hauptkomponenten: dem Backend, das mit NestJS entwickelt wurde, dem Frontend das auf React basiert und einer relationalen Datenbank, die durch PostgreSQL unterstützt wird. Um eine flexible und isolierte Datenbankumgebung zu gewährleisten wird PostgreSQL über Docker containerisiert, was eine einfache Bereitstellung und Verwaltung verschiedener Entwicklungs- und Produktionsumgebungen ermöglicht (s. Abbildung \ref{fig:Architekturdiagramm}). 
 \newline
 \newline
 Das Frontend wird im Rahmen einer Microfrontend-Architektur entwickelt, bei der das React-basierte Interface als eine von mehreren Anwendungen innerhalb eines größeren Systems integriert wird. Diese Architektur ermöglicht es, unterschiedliche Frontends, die mit verschiedenen Technologien entwickelt wurden, nahtlos zu kombinieren und gleichzeitig eine modulare Struktur beizubehalten. Jede Anwendung (Microfrontend) ist in sich eigenständig, kann aber über standardisierte Schnittstellen miteinander kommunizieren. Auf diese Weise können unterschiedliche Technologien und Teams gleichzeitig an verschiedenen Microfrontends arbeiten, was die Flexibilität und Skalierbarkeit des Systems erhöht.
 \newline
 \newline
-NestJS bietet eine robuste und strukturierte Grundlage für die Backend-Entwicklung. Dabei stellt die serviceorientierte Architektur in Kombination mit der \ac{MVC}-Architektur sicher, die von NestJS vorgegeben wird, dass die Geschäftslogik effizient isoliert und die verschiedenen Komponenten voneinander getrennt sind.
+NestJS bietet eine robuste und strukturierte Grundlage für die Backend-Entwicklung. Die serviceorientierte Architektur in Kombination mit der \ac{MVC}-Ansatz, wie ihn NestJS vorgibt, stellt sicher, dass die Geschäftslogik effizient isoliert und die verschiedenen Komponenten voneinander getrennt sind.
 \newline
-Die Kommunikation zwischen den einzelnen Komponenten erfolgt über klar definierte Schnittstellen und standardisierte Protokolle. Das Frontend interagiert mit dem Backend über HTTP-APIs unter Verwendung von RESTful-Endpunkten. Diese APIs ermöglichen eine effiziente und flexible Kommunikation zwischen benutzeroberfläche und Serverlogik, wobei JSON als Standardformat für die Datenübertragung verwendet wird.
+Die Kommunikation zwischen den einzelnen Komponenten erfolgt über klar definierte Schnittstellen und standardisierte Protokolle. Das Frontend interagiert mit dem Backend über HTTP-APIs unter Verwendung von RESTful-Endpunkten. Diese APIs ermöglichen eine effiziente und flexible Kommunikation zwischen Benutzeroberfläche und Serverlogik, wobei JSON als Standardformat für die Datenübertragung verwendet wird.
 \newline
-Das NestJS-Backend übernimmt die zentrale Rolle in der Geschäftslogik des Systems. Es stellt den Datenzugriff auf die PostgreSQL-Datenbank bereit und kümmert sich um die Verarbeitung der Daten. Die Datenbank wird über ein \ac{ORM} angesprochen, in diesem Fall ein TypeORM, was eine effiziente und strukturierte Kommunikation zwischen den Anwendungen und der relationalen Datenbank ermöglicht.
+Das NestJS-Backend übernimmt die zentrale Rolle in der Geschäftslogik des Systems. Es stellt den Datenzugriff auf die PostgreSQL-Datenbank bereit und kümmert sich um die Verarbeitung der Daten. Die Datenbank wird über ein \ac{ORM} angesprochen, in diesem Fall ein TypeORM, was eine effiziente und strukturierte Kommunikation zwischen den Anwendungen und der relationalen Datenbank ermöglicht. Zusätzlich gibt es die Schnittstelle zum IAV Merida Hub, die den Import von Flotten und Fahrzeugdaten in die lokale Datenbank ermöglicht. Durch die asynchrone Kommunikation über API-Aufrufe bleibt die Datenbasis stets aktuell und wird in Echtzeit mit dem IAV Merida Hub synchronisiert.
 Mittels der folgenden Abbildung wird verdeutlicht, wie die einzelnen Schichten miteinander kommunizieren.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.4]{media/Architekturdiagramm}
+    \caption{Architekturdiagramm}
+    \label{fig:Architekturdiagramm}
+\end{figure}
+Ein zusätzliches Komponentendiagramm (s. Abbildung \ref{fig:Komponentendiagramm}) zeigt die Schnittstellen zwischen Backend, Frontend und Datenbank sowie die Verbindung zu externen Systemen. Es verdeutlicht, wie das Backend die im IAV Merida Hub gespeicherten Flotten- und Fahrzeugdaten abruft, sodass Nutzer im Frontend Flotten und – optional – Fahrzeuge auswählen kann, für die sie Messdaten und Analysen einsehen möchten.
 \newline
+Neben dem Merida Request-Modul bietet der IAV Merida Explorer aktuell weitere Module. Dazu gehören der Merida Transmitter für den gesicherten und automatisierten Upload von Messdaten aus verschiedenen Quellen, der Merida Signals Web für einen direkten Einblick in die verfügbaren Messdaten sowie der Merida Finder, der durch eine spezielle Suchmaske komplexe Suchanfragen über alle Messungen hinweg ermöglicht. Das Merida Dashboard visualisiert schließlich verschiedene Analysen der gesammelten Daten.
 \newline
-Mithilfe des folgenden Komponentendiagramms (siehe Abbildung XY) werden die Schnittstellen zwischen Backend, Frontend und Datenbank sowie die Verbindungen zu anderen Systemen dargestellt. Das Backend ruft die im IAV Merida Hub gespeicherten Flotten und dazugehörigen Fahrzeuge ab, sodass der Nutzer im Frontend Flotten und optional auch Fahrzeuge auswählen kann, zu denen er Messdaten oder Analysen einsehen möchte.
+Für die Zukunft ist die Integration einer Schnittstelle zu Confluence geplant, um den Analysten eine erleichterte Dokumentation einzelner Anfragen zu ermöglichen.
 \newline
-Neben Merida Request gibt es im IAV Merida Explorer derzeit weitere Module, darunter den Merida Transmitter, der für einen gesicherten und automatisierten Upload von Messdaten aus unterschiedlichen Quellen verantwortlich ist. Der Merida Signals Web bietet einen direkten Einblick in die verfügbaren Messdaten, und der Merida Finder ermöglicht es dem Nutzer, mithilfe einer speziellen Suchmaske komplexe Suchanfragen über alle Messungen hinweg zu stellen. Im Merida Dashboard werden schließlich verschiedene Analysen der Daten visualisiert.
-\newline
-Im aktuellen Projekt noch nicht umgesetzt, jedoch perspektivisch geplant, ist die Integration einer Schnittstelle zu Confluence, um Data Analysts die Dokumentation zu einzelnen Anfragen zu erleichtern.
+Außerdem ist noch unklar, wie die Verwaltung der Daten- und Analyseanfragen erfolgen soll. Im Gespräch ist derzeit Jira, das als Ticketsystem für Anfragen dienen könnte, um die Zuweisung an Analysten zu erleichtern und einen besseren Überblick über die offenen Aufgaben zu gewährleisten. Allerdings gab es in der Vergangenheit einige Schwierigkeiten mit Jira, weshalb noch zu prüfen ist, ob Jira tatsächlich eine geeignete Lösung darstellt oder ob eine Eigenimplementierung sinnvoller wäre.
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.4]{media/Komponentendiagramm}
+    \caption{Komponentendiagramm}
+    \label{fig:Komponentendiagramm}
+\end{figure}
 \label{chap:kapitel5}
